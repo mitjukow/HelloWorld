@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:paddingBottom="15dp"
+        android:paddingStart="@dimen/itemStart"
+        android:paddingEnd="@dimen/itemEnd"
+        >
+        <EditText
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/titleHint"
+            android:inputType="text"
+            android:textSize="24sp"
+            android:textColor="@color/titleTextColor"
+            />
+
+        <EditText
+            android:id="@+id/priceText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/priceHint"
+            android:inputType="number"
+            android:textSize="24sp"
+            android:layout_marginTop="25dp"
+            android:textColor="@color/titleTextColor"
+            />
+
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25dp"
+            android:background="@null"
+            android:textColor="@color/addButtonColorInactive"
+            android:text="@string/addButtonText"
+            />
+
+</RelativeLayout>
