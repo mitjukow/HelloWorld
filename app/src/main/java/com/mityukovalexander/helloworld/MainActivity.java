@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+// TODO вынести все размеры из файлов разметок в ресурсы (dimens.xml)
 public class MainActivity extends AppCompatActivity {
 
     @Override

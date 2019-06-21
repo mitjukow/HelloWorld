@@ -8,4 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--Внес новую кастомную тему, на вебинаре не было - показываею-->
+    <!--Эта тема наследний той, что была установлена в манифесте.-->
+    <!--Только теперь мы изменили основные цвета - теперь черточка в полях ввода будет нужного-->
+    <!--нам цвета. Раньше был салотовый по-умолчанию. TODO remove this comment-->
+    <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
 </resources>
