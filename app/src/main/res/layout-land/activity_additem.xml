@@ -12,7 +12,7 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
-        android:paddingBottom="15dp"
+        android:paddingBottom="@dimen/itemBottomLand"
         android:paddingStart="@dimen/itemStart"
         android:paddingEnd="@dimen/itemEnd"
         >
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/titleHint"
             android:inputType="text"
-            android:textSize="24sp"
+            android:textSize="@dimen/titleTextSize"
             android:textColor="@color/titleTextColor"
             />
 
@@ -33,8 +33,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/priceHint"
             android:inputType="number"
-            android:textSize="24sp"
-            android:layout_marginTop="25dp"
+            android:textSize="@dimen/priceTextSize"
+            android:layout_marginTop="@dimen/landMarginTop"
             android:textColor="@color/titleTextColor"
             />
 
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="25dp"
+            android:layout_marginBottom="@dimen/landMarginBottom"
             android:background="@null"
             android:textColor="@color/addButtonColorInactive"
             android:text="@string/addButtonText"

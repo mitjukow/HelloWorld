@@ -30,7 +30,6 @@ public class AddItemActivity extends AppCompatActivity {
         addButton = findViewById(R.id.addButton);
 
         titleEdit.addTextChangedListener(new TextWatcher() {
-            // Удалил пустые строки, чтобы просто так место не занимать TODO remove this comment
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 

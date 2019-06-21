@@ -15,14 +15,14 @@
         android:paddingEnd="@dimen/itemEnd"
         >
 
-        <!--Добавил отступ TODO remove this comment-->
+
         <EditText
             android:id="@+id/titleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/titleHint"
             android:inputType="text"
-            android:textSize="24sp"
+            android:textSize="@dimen/titleTextSize"
             android:textColor="@color/titleTextColor"
             />
 
@@ -32,8 +32,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/priceHint"
             android:inputType="number"
-            android:textSize="24sp"
-            android:layout_marginTop="25dp"
+            android:textSize="@dimen/priceTextSize"
+            android:layout_marginTop="@dimen/marginTop"
             android:textColor="@color/titleTextColor"
             />
 

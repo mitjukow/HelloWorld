@@ -18,8 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--Как правильно по code style. Бывают разные стили, но в целом важно,  за эту черточку-->
-        <!--не заступать TODO remove this comment-->
+
+
         <activity
             android:name=".AddItemActivity"
             android:theme="@style/NoActionBarTheme"/>
