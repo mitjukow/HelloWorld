@@ -3,4 +3,6 @@
     <string name="titleHint">Название</string>
     <string name="priceHint">Цена</string>
     <string name="addButtonText">Добавить</string>
+    <string name="currencyRuble">%1$s ₽</string>
+    <string name="budgetTitle">Учёт бюджета</string>
 </resources>
