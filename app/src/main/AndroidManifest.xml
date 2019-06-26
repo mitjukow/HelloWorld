@@ -18,11 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
+        <!--TODO не нужно делать много пустых строк. Для разделения хватит одной-->
         <activity
             android:name=".AddItemActivity"
             android:theme="@style/NoActionBarTheme"/>
+        <activity
+            android:name=".BudgetActivity"
+            android:label="@string/budgetTitle"/>
 
     </application>
 

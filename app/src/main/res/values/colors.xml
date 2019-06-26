@@ -6,4 +6,7 @@
     <color name="titleTextColor">#3574fa</color>
     <color name="addButtonTextColor">#7ed321</color>
     <color name="addButtonColorInactive">#eaeaea</color>
+    <color name="BudgetItemTextColor">#666664</color>
+    <color name="BudgetItemPriceColor">#4a90e2</color>
+    <color name="dividerColor">#efefef</color>
 </resources>

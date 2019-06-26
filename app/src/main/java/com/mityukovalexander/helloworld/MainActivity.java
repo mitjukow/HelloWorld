@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         helloLoftMoney.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, AddItemActivity.class));
+                startActivity(new Intent(MainActivity.this, BudgetActivity.class));
             }
         });
     }
