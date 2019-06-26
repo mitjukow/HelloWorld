@@ -10,4 +10,12 @@
     <dimen name="landMarginBottom">25dp</dimen>
     <dimen name="marginTop">25dp</dimen>
     <dimen name="mainTitleSize">40dp</dimen>
+    <dimen name="addButtonMargin">10dp</dimen>
+    <dimen name="BudgetItemMarginEnd">10dp</dimen>
+    <dimen name="BudgetItemTextSize">20sp</dimen>
+    <dimen name="BudgetItemPriceSize">20sp</dimen>
+    <dimen name="ItemViewPaddingStart">24dp</dimen>
+    <dimen name="ItemViewPaddingEnd">24dp</dimen>
+    <dimen name="ItemViewPaddingTop">29dp</dimen>
+    <dimen name="ItemViewPaddingBottom">29dp</dimen>
 </resources>

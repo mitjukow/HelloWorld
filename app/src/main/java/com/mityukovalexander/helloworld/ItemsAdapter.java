@@ -31,7 +31,6 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         return mItemList.size();
     }
 
-    // TODO - сделал protected
     void addItem(final Item item) {
         mItemList.add(item);
         notifyItemInserted(mItemList.size());
@@ -42,7 +41,6 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         private TextView mNameView;
         private TextView mPriceView;
 
-        // TODO - сделал protected
         ItemViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -51,7 +49,6 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
             mPriceView = itemView.findViewById(R.id.BudgetItemPrice);
         }
 
-        // TODO - сделал protected
         void bindItem(final Item item) {
             mNameView.setText(item.getName());
             mPriceView.setText(

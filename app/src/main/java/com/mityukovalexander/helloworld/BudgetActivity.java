@@ -10,7 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
-// TODO обратите внимание на стиль когда
+
 public class BudgetActivity extends AppCompatActivity {
 
     private ItemsAdapter mItemsAdapter;
@@ -26,7 +26,6 @@ public class BudgetActivity extends AppCompatActivity {
         recyclerView.setAdapter(mItemsAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // TODO добавил дивайдер, как в доп задании
         recyclerView.addItemDecoration(
                 new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         );

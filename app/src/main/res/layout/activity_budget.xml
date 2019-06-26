@@ -12,13 +12,12 @@
 
     </android.support.v7.widget.RecyclerView>
 
-    <!--TODO вынести размеры в ресурсы-->
     <Button
         android:id="@+id/addItemButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/addButtonMargin"
         android:text="@string/addButtonText"/>
 
 </FrameLayout>
