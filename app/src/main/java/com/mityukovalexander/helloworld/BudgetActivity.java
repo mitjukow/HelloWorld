@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+// TODO обратите внимание на стиль когда
 public class BudgetActivity extends AppCompatActivity {
 
     private ItemsAdapter mItemsAdapter;
@@ -24,15 +26,25 @@ public class BudgetActivity extends AppCompatActivity {
         recyclerView.setAdapter(mItemsAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        // TODO добавил дивайдер, как в доп задании
+        recyclerView.addItemDecoration(
+                new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+        );
+
         mItemsAdapter.addItem(new Item("Krab", 480));
         mItemsAdapter.addItem(new Item("Pizza", 180));
-        mItemsAdapter.addItem(new Item("Coffee prosto chtobi proverit rabotaet li perenos. a on rabotaet.", 30));
+        mItemsAdapter.addItem(new Item(
+                "Coffee prosto chtobi proverit rabotaet li perenos. a on rabotaet.", 30
+        ));
 
         Button addItemButton = findViewById(R.id.addItemButton);
         addItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivityForResult(new Intent(BudgetActivity.this, AddItemActivity.class), 101);
+                startActivityForResult(
+                        new Intent(BudgetActivity.this, AddItemActivity.class),
+                        101
+                );
             }
         });
     }
@@ -42,7 +54,10 @@ public class BudgetActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == 101 && resultCode == RESULT_OK) {
-            Item item = new Item(data.getStringExtra("name"), Integer.parseInt(data.getStringExtra("price")));
+            Item item = new Item(
+                    data.getStringExtra("name"),
+                    Integer.parseInt(data.getStringExtra("price"))
+            );
             mItemsAdapter.addItem(item);
         }
     }

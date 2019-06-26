@@ -6,8 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +31,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         return mItemList.size();
     }
 
-    public void addItem(final Item item) {
+    // TODO - сделал protected
+    void addItem(final Item item) {
         mItemList.add(item);
         notifyItemInserted(mItemList.size());
     }
@@ -43,7 +42,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         private TextView mNameView;
         private TextView mPriceView;
 
-        public ItemViewHolder(@NonNull View itemView) {
+        // TODO - сделал protected
+        ItemViewHolder(@NonNull View itemView) {
             super(itemView);
 
 
@@ -51,7 +51,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
             mPriceView = itemView.findViewById(R.id.BudgetItemPrice);
         }
 
-        public void bindItem(final Item item) {
+        // TODO - сделал protected
+        void bindItem(final Item item) {
             mNameView.setText(item.getName());
             mPriceView.setText(
                     mPriceView.getContext().getResources().getString(R.string.currencyRuble, String.valueOf(item.getPrice())));
