@@ -1,8 +1,14 @@
 package com.mityukovalexander.helloworld;
 
-import android.content.Intent;
+//import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,51 +19,54 @@ import android.widget.Button;
 
 public class BudgetActivity extends AppCompatActivity {
 
-    private ItemsAdapter mItemsAdapter;
+    private TabLayout mTabLayout;
+    private ViewPager mViewPager;
+    private BudgetViewPagerAdapter mViewPagerAdapter;
+
+    private BudgetFragment outcomeFragment;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_budget);
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
 
-        mItemsAdapter = new ItemsAdapter();
+        mViewPagerAdapter = new BudgetViewPagerAdapter(getSupportFragmentManager());
 
-        recyclerView.setAdapter(mItemsAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mTabLayout = findViewById(R.id.tabLayout);
+        mViewPager = findViewById(R.id.viewPager);
+        mViewPager.setAdapter(mViewPagerAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.getTabAt(0).setText(R.string.outcome);
+        mTabLayout.getTabAt(1).setText(R.string.income);
 
-        recyclerView.addItemDecoration(
-                new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
-        );
+        mTabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.tabIndicatorColor));
 
-        mItemsAdapter.addItem(new Item("Krab", 480));
-        mItemsAdapter.addItem(new Item("Pizza", 180));
-        mItemsAdapter.addItem(new Item(
-                "Coffee prosto chtobi proverit rabotaet li perenos. a on rabotaet.", 30
-        ));
-
-        Button addItemButton = findViewById(R.id.addItemButton);
-        addItemButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivityForResult(
-                        new Intent(BudgetActivity.this, AddItemActivity.class),
-                        101
-                );
-            }
-        });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    static class BudgetViewPagerAdapter extends FragmentPagerAdapter {
 
-        if (requestCode == 101 && resultCode == RESULT_OK) {
-            Item item = new Item(
-                    data.getStringExtra("name"),
-                    Integer.parseInt(data.getStringExtra("price"))
-            );
-            mItemsAdapter.addItem(item);
+
+
+        public BudgetViewPagerAdapter(FragmentManager fm) {
+            super(fm);
+
+
+        }
+
+        @Override
+        public Fragment getItem(int i) {
+            switch (i) {
+                case 0:
+                    return BudgetFragment.newInstance(FragmentType.expense);
+                case 1:
+                    return BudgetFragment.newInstance(FragmentType.income);
+            }
+            return null;
+        }
+
+        @Override
+        public int getCount() {
+            return 2;
         }
     }
 }
