@@ -5,4 +5,7 @@
     <string name="addButtonText">Добавить</string>
     <string name="currencyRuble">%1$s ₽</string>
     <string name="budgetTitle">Учёт бюджета</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="outcome">Расходы</string>
+    <string name="income">Доходы</string>
 </resources>

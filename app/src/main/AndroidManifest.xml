@@ -27,7 +27,8 @@
             android:theme="@style/NoActionBarTheme"/>
         <activity
             android:name=".BudgetActivity"
-            android:label="@string/budgetTitle"/>
+            android:label="@string/budgetTitle"
+            android:theme="@style/NoActionBarTheme"/>
 
     </application>
 

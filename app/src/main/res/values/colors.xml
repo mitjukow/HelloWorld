@@ -11,4 +11,6 @@
     <color name="dividerColor">#efefef</color>
     <color name="tabIndicatorColor">#D81B60</color>
     <color name="incomePriceColor">#7ed321</color>
+    <color name="colorAccentGray">#dbdbdb</color>
+    <color name="addButtonTextColor_disabled">#e3e3e3</color>
 </resources>
