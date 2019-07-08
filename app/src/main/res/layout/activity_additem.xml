@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,31 +15,37 @@
         android:paddingEnd="@dimen/itemEnd"
         >
 
-
-        <EditText
-            android:id="@+id/titleText"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/titleHint"
-            android:inputType="text"
-            android:textSize="@dimen/titleTextSize"
-            android:textColor="@color/titleTextColor"
-            />
+            android:textColorHint="@color/colorAccentGray">
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:inputType="text"
+                android:textColor="@color/titleTextColor"/>
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/priceText"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/priceHint"
-            android:inputType="number"
-            android:textSize="@dimen/priceTextSize"
-            android:layout_marginTop="@dimen/marginTop"
-            android:textColor="@color/titleTextColor"
-            />
+            android:textColorHint="@color/colorAccentGray">
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/priceText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:inputType="number"
+                android:textColor="@color/titleTextColor"/>
+        </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>
 
-        <Button
+        <android.support.design.button.MaterialButton
             android:id="@+id/addButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,8 +53,13 @@
             android:layout_centerVertical="true"
             android:background="@null"
             android:gravity="center"
-            android:textColor="@color/addButtonColorInactive"
             android:text="@string/addButtonText"
+            android:textSize="24sp"
+            android:enabled="false"
+            android:textColor="@color/add_button_color"
+            app:icon="@drawable/ic_check_green_24dp"
+            app:iconTint="@color/add_button_color"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             />
 
 </RelativeLayout>

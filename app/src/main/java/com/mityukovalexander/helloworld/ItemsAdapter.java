@@ -12,11 +12,18 @@ import java.util.List;
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
 
     private List<Item> mItemList = new ArrayList<>();
+    private int mPriceColor;
+
+    public ItemsAdapter(int mPriceColorl) {
+        this.mPriceColor = mPriceColorl;
+    }
 
     @NonNull
     @Override
     public ItemsAdapter.ItemViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView = View.inflate(viewGroup.getContext(), R.layout.item_view, null);
+        TextView priceView = itemView.findViewById(R.id.BudgetItemPrice);
+        priceView.setTextColor(itemView.getContext().getResources().getColor(mPriceColor));
         return new ItemViewHolder(itemView);
     }
 
@@ -31,18 +38,22 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         return mItemList.size();
     }
 
-    // TODO - сделал protected
     void addItem(final Item item) {
         mItemList.add(item);
         notifyItemInserted(mItemList.size());
     }
+
+    public void clear() {
+        mItemList.clear();
+        notifyDataSetChanged();
+    }
+
 
     static class ItemViewHolder extends RecyclerView.ViewHolder {
 
         private TextView mNameView;
         private TextView mPriceView;
 
-        // TODO - сделал protected
         ItemViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -51,7 +62,6 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
             mPriceView = itemView.findViewById(R.id.BudgetItemPrice);
         }
 
-        // TODO - сделал protected
         void bindItem(final Item item) {
             mNameView.setText(item.getName());
             mPriceView.setText(
