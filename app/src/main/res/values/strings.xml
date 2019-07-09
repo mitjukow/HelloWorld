@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoftMoney</string>
+    <string name="app_name">MoneyKAI</string>
     <string name="titleHint">Title</string>
     <string name="priceHint">Price</string>
     <string name="addButtonText">Add</string>
@@ -8,4 +8,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="outcome">Expense</string>
     <string name="income">Income</string>
+    <string name="enterButtonTitle" translatable="false">Войти</string>
 </resources>

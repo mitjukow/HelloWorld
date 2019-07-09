@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ЛофтДеньги</string>
+    <string name="app_name">MoneyKAI</string>
     <string name="titleHint">Название</string>
     <string name="priceHint">Цена</string>
     <string name="addButtonText">Добавить</string>
