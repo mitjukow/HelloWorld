@@ -18,4 +18,14 @@
     <dimen name="ItemViewPaddingEnd">24dp</dimen>
     <dimen name="ItemViewPaddingTop">29dp</dimen>
     <dimen name="ItemViewPaddingBottom">29dp</dimen>
+    <dimen name="imageAuthSize">93dp</dimen>
+    <dimen name="authMainMarginTop">18dp</dimen>
+    <dimen name="authMainMarginBottom">32dp</dimen>
+    <dimen name="ButtonCornerRadius">24dp</dimen>
+    <dimen name="ButtonTextSize">20sp</dimen>
+    <dimen name="ButtonPaddingStartEnd">30dp</dimen>
+    <dimen name="ButtonPaddingTopBottom">16dp</dimen>
+    <dimen name="FABlayoutMargin">16dp</dimen>
+    <dimen name="TextInputSize">24sp</dimen>
+    <dimen name="textSizeAddButton">24sp</dimen>
 </resources>

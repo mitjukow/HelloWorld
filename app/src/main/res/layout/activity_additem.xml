@@ -24,7 +24,7 @@
                 android:id="@+id/titleText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
+                android:textSize="@dimen/TextInputSize"
                 android:inputType="text"
                 android:textColor="@color/titleTextColor"/>
         </android.support.design.widget.TextInputLayout>
@@ -38,7 +38,7 @@
                 android:id="@+id/priceText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
+                android:textSize="@dimen/TextInputSize"
                 android:inputType="number"
                 android:textColor="@color/titleTextColor"/>
         </android.support.design.widget.TextInputLayout>
@@ -54,7 +54,7 @@
             android:background="@null"
             android:gravity="center"
             android:text="@string/addButtonText"
-            android:textSize="24sp"
+            android:textSize="@dimen/textSizeAddButton"
             android:enabled="false"
             android:textColor="@color/add_button_color"
             app:icon="@drawable/ic_check_green_24dp"

@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:layout_margin="16dp"
+            android:layout_margin="@dimen/FABlayoutMargin"
             android:text="@string/addButtonText"/>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -25,6 +25,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static android.os.Build.TYPE;
+import static com.mityukovalexander.helloworld.MainActivity.AUTH_TOKEN;
 
 
 public class BudgetFragment extends Fragment {
@@ -98,7 +99,7 @@ public class BudgetFragment extends Fragment {
 
         if (requestCode == 101 && resultCode == Activity.RESULT_OK) {
 
-            final String token = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("auth_token", "");
+            final String token = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(AUTH_TOKEN, "");
             final int price = Integer.parseInt(data.getStringExtra("price"));
             final String name = data.getStringExtra("name");
             Call<Status> call = mApi.addItems(new AddItemsRequest(price, name, getArguments().getString(TYPE)), token);
