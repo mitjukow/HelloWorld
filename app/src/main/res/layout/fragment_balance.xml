@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:androi="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="37dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif-light"
+        android:textStyle="normal"
+        android:textColor="@color/BalanceViewTextColor"
+        android:gravity="end"
+        android:text="@string/finances"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        />
+
+    <TextView
+        android:id="@+id/totalMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="48sp"
+        android:fontFamily="sans-serif-medium"
+        android:textStyle="normal"
+        android:textColor="@color/pale_orange"
+        android:gravity="end"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        tools:text="67000₽"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dividerColor"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+    
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="41dp"
+            android:paddingBottom="27dp"
+            android:paddingStart="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:fontFamily="sans-serif-light"
+                    android:textStyle="normal"
+                    android:textColor="@color/BalanceViewTextColor"
+                    android:gravity="end"
+                    android:text="@string/outcome"
+                    />
+
+                <TextView
+                    android:id="@+id/expenseMoney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="normal"
+                    android:textColor="@color/expenseBalanceDiagram"
+                    android:gravity="end"
+                    tools:text="5400₽"
+                    />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/dividerColor"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:paddingTop="41dp"
+            android:paddingBottom="27dp"
+            android:paddingStart="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:fontFamily="sans-serif-light"
+                    android:textStyle="normal"
+                    android:textColor="@color/BalanceViewTextColor"
+                    android:gravity="end"
+                    android:text="@string/income"
+                    />
+
+                <TextView
+                    android:id="@+id/incomeMoney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="normal"
+                    android:textColor="@color/incomeBalanceDiagram"
+                    android:gravity="end"
+                    tools:text="74000₽"
+                    />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dividerColor"/>
+
+    <com.mityukovalexander.helloworld.DiagramView
+        android:id="@+id/diagramViewBalance"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

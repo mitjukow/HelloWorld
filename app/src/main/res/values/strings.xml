@@ -9,4 +9,8 @@
     <string name="outcome">Expense</string>
     <string name="income">Income</string>
     <string name="enterButtonTitle" translatable="false">Войти</string>
+    <string name="remove_title">Удалить</string>
+    <string name="remove_conf">Вы действительно хотите удалить выбранные элементы?</string>
+    <string name="balance">Баланс</string>
+    <string name="finances">Доступные финансы</string>
 </resources>
