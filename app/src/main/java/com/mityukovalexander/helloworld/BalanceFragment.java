@@ -10,11 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.mityukovalexander.helloworld.MainActivity.AUTH_TOKEN;
 
 public class BalanceFragment extends Fragment {
 
@@ -55,15 +55,16 @@ public class BalanceFragment extends Fragment {
     }
 
     private void loadBalance() {
-        final String token = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("auth_token", "");
+        final String token = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(AUTH_TOKEN, "");
         Call<BalanceResponse> balanceResponseCall = mApi.getBalance(token);
         balanceResponseCall.enqueue(new Callback<BalanceResponse>() {
             @Override
             public void onResponse(Call<BalanceResponse> call, Response<BalanceResponse> response) {
-
-                mTotalMoney.setText(getString(R.string.currencyRuble, String.valueOf(response.body().getTotalExpense() + response.body().getTotalIncome())));
+                mTotalMoney.setText(getString(R.string.currencyRuble, String.valueOf(response.body().getTotalIncome() - response.body().getTotalExpense())));
                 mExpenseMoney.setText(getString(R.string.currencyRuble, String.valueOf(response.body().getTotalExpense())));
                 mIncomeMoney.setText(getString(R.string.currencyRuble, String.valueOf(response.body().getTotalIncome())));
+
+                mDiagramView.update(response.body().getTotalIncome(), response.body().getTotalExpense());
             }
 
             @Override

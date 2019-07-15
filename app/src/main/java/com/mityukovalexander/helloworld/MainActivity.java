@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void startBudgetActivity() {
         startActivity(new Intent(MainActivity.this, BudgetActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-        finish();
         overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
     }
 
