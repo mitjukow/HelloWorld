@@ -23,6 +23,7 @@ public class BalanceFragment extends Fragment {
     private TextView mTotalMoney;
     private TextView mExpenseMoney;
     private TextView mIncomeMoney;
+
     public static BalanceFragment newInstance() {
         BalanceFragment fragment = new BalanceFragment();
 
@@ -31,7 +32,10 @@ public class BalanceFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(
+            @NonNull LayoutInflater inflater,
+            @Nullable ViewGroup container,
+            @Nullable Bundle savedInstanceState) {
         View fragmentView = inflater.inflate(R.layout.fragment_balance, container, false);
         mDiagramView = fragmentView.findViewById(R.id.diagramViewBalance);
         mTotalMoney = fragmentView.findViewById(R.id.totalMoney);

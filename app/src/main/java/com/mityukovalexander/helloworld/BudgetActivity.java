@@ -1,7 +1,6 @@
 package com.mityukovalexander.helloworld;
 
 import android.content.Intent;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,18 +9,12 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
-
 
 public class BudgetActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
 
@@ -75,6 +68,7 @@ public class BudgetActivity extends AppCompatActivity implements ViewPager.OnPag
         super.onSupportActionModeStarted(mode);
         mToolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.selectForDeleteColor));
         mTabLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.selectForDeleteColor));
+        mode.setTitle(getResources().getString(R.string.selected));
         mFloatingActionButton.hide();
 
     }
@@ -95,7 +89,7 @@ public class BudgetActivity extends AppCompatActivity implements ViewPager.OnPag
 
     @Override
     public void onPageSelected(int i) {
-        if (i ==2) {
+        if (i == 2) {
             mFloatingActionButton.hide();
             } else {
             mFloatingActionButton.show();
@@ -109,13 +103,8 @@ public class BudgetActivity extends AppCompatActivity implements ViewPager.OnPag
     }
 
     static class BudgetViewPagerAdapter extends FragmentPagerAdapter {
-
-
-
         public BudgetViewPagerAdapter(FragmentManager fm) {
             super(fm);
-
-
         }
 
         @Override

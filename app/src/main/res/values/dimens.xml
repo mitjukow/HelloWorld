@@ -28,4 +28,8 @@
     <dimen name="FABlayoutMargin">16dp</dimen>
     <dimen name="TextInputSize">24sp</dimen>
     <dimen name="textSizeAddButton">24sp</dimen>
+    <dimen name="DVlayoutheight">200dp</dimen>
+    <dimen name="DVlayoutMarginTop">35dp</dimen>
+    <dimen name="fBalanceMoneySize">24sp</dimen>
+    <dimen name="fBalanceTextSize">10sp</dimen>
 </resources>

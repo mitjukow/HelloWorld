@@ -2,18 +2,14 @@ package com.mityukovalexander.helloworld;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -22,8 +18,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -31,7 +25,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static android.os.Build.TYPE;
 import static com.mityukovalexander.helloworld.MainActivity.AUTH_TOKEN;
 
 
@@ -39,7 +32,6 @@ public class BudgetFragment extends Fragment implements ItemAdapterListener, Act
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String PRICE_COLOR = "price_color";
-
     private static final String TYPE = "type";
     private SwipeRefreshLayout mSwipeRefresh;
     private ItemsAdapter mItemsAdapter;
@@ -128,7 +120,7 @@ public class BudgetFragment extends Fragment implements ItemAdapterListener, Act
     }
 
     private void loadItems() {
-        final String token = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("auth_token", "");
+        final String token = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(AUTH_TOKEN, "");
         Call<List<Item>> itemsResponseCall = mApi.getItems(getArguments().getString(TYPE), token);
         itemsResponseCall.enqueue(new Callback<List<Item>>() {
             @Override
@@ -145,6 +137,7 @@ public class BudgetFragment extends Fragment implements ItemAdapterListener, Act
             @Override
             public void onFailure(Call<List<Item>> call, Throwable t) {
                 mSwipeRefresh.setRefreshing(false);
+                t.printStackTrace();
             }
         });
 
@@ -155,17 +148,19 @@ public class BudgetFragment extends Fragment implements ItemAdapterListener, Act
         if (mItemsAdapter.isSelected(position)) {
             mItemsAdapter.toogleItem(position);
             mItemsAdapter.notifyDataSetChanged();
+            mActionMode.setTitle(getResources().getString(R.string.selected));
         }
     }
 
+
     @Override
     public void onItemLongClick(final Item item, final int position) {
-        mItemsAdapter.toogleItem(position);
-        mItemsAdapter.notifyDataSetChanged();
-        if (mActionMode == null) {
-            ((AppCompatActivity) getActivity()).startSupportActionMode(this);
+            mItemsAdapter.toogleItem(position);
+            mItemsAdapter.notifyDataSetChanged();
+            if (mActionMode == null) {
+                ((AppCompatActivity) getActivity()).startSupportActionMode(this);
+            }
         }
-    }
 
     @Override
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {

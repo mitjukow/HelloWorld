@@ -16,7 +16,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
     private int mPriceColor;
     private ItemAdapterListener mListener;
 
-    private SparseBooleanArray mSelectedItems = new SparseBooleanArray();
+    public static SparseBooleanArray mSelectedItems = new SparseBooleanArray();
 
     public ItemsAdapter(int mPriceColorl) {
         this.mPriceColor = mPriceColorl;

@@ -3,16 +3,45 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.mityukovalexander.helloworld"
+        applicationId "com.mityukovalexander.loftmoney"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
+
+    signingConfigs {
         release {
-            minifyEnabled false
+            storeFile file ("release_keystore.jks")
+            storePassword '1234567'
+            keyAlias 'charm_alias'
+            keyPassword '1234567'
+        }
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("String", "URL", "\"https://loftschool.com/android-api/basic/v1/\"" )
+            resValue("string", "app_name", "loftmoney_debug")
+        }
+        release {
+            signingConfig signingConfigs.release
+            buildConfigField("String", "URL", "\"https://loftschool.com/android-api/basic/v1/\"" )
+            resValue("string", "app_name", "LoftMoney")
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions 'target'
+    productFlavors {
+        mobileFlav {
+
+        }
+
+        TestFlav {
+            applicationIdSuffix ".testflav"
         }
     }
 }
@@ -29,5 +58,5 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.0.1'
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
 }
