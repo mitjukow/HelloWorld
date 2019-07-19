@@ -8,7 +8,7 @@
     android:paddingEnd="@dimen/ItemViewPaddingEnd"
     android:paddingTop="@dimen/ItemViewPaddingTop"
     android:paddingBottom="@dimen/ItemViewPaddingBottom"
-    android:background="@android:color/white">
+    android:background="@drawable/item_background">
 
         <TextView
             android:id="@+id/BudgetItemText"

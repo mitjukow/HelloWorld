@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MoneyKAI</string>
+    <string name="app_title">ЛофтДеньги</string>
     <string name="titleHint">Название</string>
     <string name="priceHint">Цена</string>
     <string name="addButtonText">Добавить</string>
@@ -8,4 +8,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="outcome">Расходы</string>
     <string name="income">Доходы</string>
+    <string name="remove_conf">Вы действительно хотите удалить выбранные элементы?</string>
+    <string name="remove_title">Удалить</string>
+    <string name="selected">Выберите</string>
+    <string name="finances">Доступные финансы</string>
+    <string name="enterButtonTitle" translatable="false">Войти</string>
+    <string name="balance">Баланс</string>
 </resources>
