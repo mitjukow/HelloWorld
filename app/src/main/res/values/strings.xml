@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_title">LoftMoney</string>
+    <string name="app_title">tupamoney</string>
     <string name="titleHint">Title</string>
     <string name="priceHint">Price</string>
     <string name="addButtonText">Add</string>
