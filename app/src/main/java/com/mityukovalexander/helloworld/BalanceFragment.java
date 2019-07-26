@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

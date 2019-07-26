@@ -18,9 +18,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,8 +27,6 @@ import static com.mityukovalexander.helloworld.MainActivity.AUTH_TOKEN;
 
 
 public class BudgetFragment extends Fragment implements ItemAdapterListener, ActionMode.Callback {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String PRICE_COLOR = "price_color";
     private static final String TYPE = "type";
     private SwipeRefreshLayout mSwipeRefresh;
@@ -39,10 +35,8 @@ public class BudgetFragment extends Fragment implements ItemAdapterListener, Act
     private ActionMode mActionMode;
 
     public BudgetFragment() {
-        // Required empty public constructor
     }
 
-    // TODO: Rename and change types and number of parameters
     public static BudgetFragment newInstance(FragmentType fragmentType) {
         BudgetFragment fragment = new BudgetFragment();
         Bundle args = new Bundle();
